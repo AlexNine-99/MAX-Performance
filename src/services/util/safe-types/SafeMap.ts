@@ -1,3 +1,5 @@
+import { capitalize } from './util/capitalize'
+
 export interface SafeMap<K, V> {
   add(key: K, item: V): void
   get(id: K): V
@@ -8,12 +10,10 @@ export function createSafeMapType<K, V>(
   keyDescriptor: string = 'key',
   valueDescriptor: string = 'item',
 ) {
-  const capitalizedValueDescriptor =
-    valueDescriptor.slice(0, valueDescriptor.length - 2)
-    + valueDescriptor[valueDescriptor.length - 1].toUpperCase()
+  const capitalizedValueDescriptor = capitalize(valueDescriptor)
 
-  return class IdMapType<T = K, U = V> implements SafeMap<T, U> {
-    private map = new Map<T, U>()
+  return class SafeMapImpl<T = K, U = V> implements SafeMap<T, U> {
+    private readonly map = new Map<T, U>()
 
     add(key: T, value: U) {
       if (this.map.has(key)) {

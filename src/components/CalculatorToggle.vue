@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import InputCheckbox from './InputCheckbox.vue'
+import InputCheckbox from '@/components/base/InputCheckbox.vue'
 
 defineProps<{
   label: string

@@ -1,5 +1,5 @@
-import createRegistryType from '@/services/createRegistryType'
-import { type InputState } from '@/services/InputState'
+import createRegistryType from '@/services/util/createRegistryType'
+import { type InputState } from '@/services/logic/InputState'
 import { defineStore } from 'pinia'
 
 const InputRegistry = createRegistryType<InputState>('input state')

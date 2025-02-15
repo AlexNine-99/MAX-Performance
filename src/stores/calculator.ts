@@ -1,5 +1,5 @@
-import type Calculator from '@/services/Calculator'
-import createRegistryType from '@/services/createRegistryType'
+import type Calculator from '@/services/logic/Calculator'
+import createRegistryType from '@/services/util/createRegistryType'
 import { defineStore } from 'pinia'
 
 const CalculatorRegistry = createRegistryType<Calculator>('calculator')
