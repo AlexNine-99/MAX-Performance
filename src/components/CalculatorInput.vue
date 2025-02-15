@@ -8,6 +8,5 @@ const model = ref('')
 </script>
 
 <template>
-  <!-- FINISH ME -->
   <slot :enabled="true" @update:modelValue="model = $event" />
 </template>
