@@ -21,9 +21,7 @@ import InputText from './components/base/InputText.vue'
       </GroupInputs>
 
       <GroupInputs label="Thrust">
-        <CalculatorInput id="takeoff-derate">
-          <InputDropdown></InputDropdown>
-        </CalculatorInput>
+        <CalculatorInput id="takeoff-derate"> </CalculatorInput>
       </GroupInputs>
     </div>
   </section>
