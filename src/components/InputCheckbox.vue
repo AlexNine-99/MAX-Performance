@@ -15,7 +15,7 @@ const emit = defineEmits<{
 <template>
   <div class="field">
     <div class="control">
-      <label class="checkbox">
+      <label class="checkbox label">
         <input
           type="checkbox"
           :value="modelValue"

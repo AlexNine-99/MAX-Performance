@@ -3,5 +3,13 @@
   "semi": false,
   "singleQuote": true,
   "printWidth": 100,
-  "experimentalOperatorPosition": "start"
+  "experimentalOperatorPosition": "start",
+  "overrides": [
+    {
+      "files": "*.vue",
+      "options": {
+        "experimentalOperatorPosition": "end"
+      }
+    }
+  ]
 }

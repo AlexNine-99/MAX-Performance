@@ -10,7 +10,13 @@ import InputText from './components/InputText.vue'
   <section class="section">
     <div class="grid">
       <GroupInputs label="Options">
-        <CalculatorToggle />
+        <CalculatorToggle label="Calculate Takeoff" calculator-id="takeoff" />
+        <CalculatorToggle label="Calculate Landing" calculator-id="landing" />
+      </GroupInputs>
+      <GroupInputs label="Weight & Balance">
+        <CalculatorInput>
+          <InputText label="Load Factor" unit="% N1" placeholder="e.g. 56"></InputText>
+        </CalculatorInput>
       </GroupInputs>
     </div>
   </section>

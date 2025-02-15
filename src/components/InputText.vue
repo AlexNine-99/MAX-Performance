@@ -2,6 +2,7 @@
 interface Props {
   label: string
   placeholder?: string
+  unit?: string
   modelValue?: string
   enabled?: boolean
 }
@@ -16,7 +17,7 @@ const emit = defineEmits<{
 <template>
   <div class="field">
     <label class="label">{{ label }}</label>
-    <div class="control">
+    <div :class="`control ${unit !== undefined ? 'has-icons-right' : undefined}`">
       <input
         class="input"
         type="text"
@@ -25,6 +26,10 @@ const emit = defineEmits<{
         :disabled="!enabled"
         @input="emit('update:modelValue', ($event.target as HTMLInputElement).value)"
       />
+      <span v-if="unit !== undefined" class="icon is-right" style="width: fit-content">
+        {{ unit }}
+        &ThickSpace;
+      </span>
     </div>
   </div>
 </template>
