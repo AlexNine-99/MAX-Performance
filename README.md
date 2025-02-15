@@ -1,0 +1,1 @@
+MAX-Performance is a performance calculator for the Boeing 737 MAX 8 in Infinite Flight built using data from [this guide](https://community.infiniteflight.com/t/boeing-737-max-8-flying-guide/963071) by Alex, Nico, Danny, and Rick.
