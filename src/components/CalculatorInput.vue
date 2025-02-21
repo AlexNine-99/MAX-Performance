@@ -9,5 +9,5 @@ const enabled = useCalculatorEnabled(props.inputId)
 </script>
 
 <template>
-  <slot :enabled="enabled" />
+  <slot :enabled="enabled ?? false" />
 </template>

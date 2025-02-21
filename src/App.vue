@@ -12,6 +12,7 @@ registerCalculator('takeoff', {
   inputIds: new Set(['load', 'takeoff-derate', 'climb-derate', 'assumed-temp', 'takeoff-flaps']),
   enabled: false,
 })
+
 registerCalculator('landing', {
   inputIds: new Set(['load', 'landing-flaps', 'gust-factor']),
   enabled: false,
@@ -31,16 +32,16 @@ registerCalculator('landing', {
       </GroupInputs>
 
       <GroupInputs label="Conditions">
-        <CalculatorInput input-id="load">
-          <InputText label="Load Factor" placeholder="e.g. 56" unit="%" />
+        <CalculatorInput v-slot="{ enabled }" input-id="load">
+          <InputText label="Load Factor" placeholder="e.g. 56" unit="%" :enabled="enabled" />
         </CalculatorInput>
 
-        <CalculatorInput input-id="temperature">
-          <InputText label="OAT" placeholder="e.g. 24" unit="&deg;C" />
+        <CalculatorInput v-slot="{ enabled }" input-id="temperature">
+          <InputText label="OAT" placeholder="e.g. 24" unit="&deg;C" :enabled="enabled" />
         </CalculatorInput>
 
-        <CalculatorInput input-id="wind-direction">
-          <InputText label="Wind Gust Increase" placeholder="e.g. 9" unit="kt" />
+        <CalculatorInput v-slot="{ enabled }" input-id="wind-direction">
+          <InputText label="Wind Gust Increase" placeholder="e.g. 9" unit="kt" :enabled="enabled" />
         </CalculatorInput>
       </GroupInputs>
 
