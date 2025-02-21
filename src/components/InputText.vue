@@ -3,23 +3,26 @@ import { computed } from 'vue'
 import InputErrors from './InputErrors.vue'
 import { useMaybeDanger } from '@/composables/useMaybeDanger'
 
-interface Props {
-  label: string
-  placeholder?: string
-  unit?: string
-  enabled: boolean
-  errors: string[]
-}
-
-const { enabled = true, errors = [], ...otherProps } = defineProps<Props>()
-const props = computed(() => ({ enabled, errors, ...otherProps }))
+const props = withDefaults(
+  defineProps<{
+    label: string
+    placeholder: string | undefined
+    unit: string | undefined
+    enabled?: boolean
+    errors?: string[]
+  }>(),
+  {
+    enabled: true,
+    errors: () => [] as string[],
+  },
+)
 
 const emit = defineEmits<{
   (e: 'input', value: string): void
 }>()
 
-const maybeIcons = computed(() => (props.value.unit !== undefined ? 'has-icons-right' : ''))
-const maybeDanger = useMaybeDanger(errors)
+const maybeIcons = computed(() => (props.unit !== undefined ? 'has-icons-right' : ''))
+const maybeDanger = useMaybeDanger(props.errors)
 </script>
 
 <template>
@@ -27,8 +30,8 @@ const maybeDanger = useMaybeDanger(errors)
     <label class="label">{{ label }}</label>
     <div :class="`control ${maybeIcons}`">
       <input
-        :class="`input ${maybeDanger}`"
         type="text"
+        :class="`input ${maybeDanger}`"
         :placeholder="placeholder"
         :disabled="!enabled"
         @input="emit('input', ($event.target as HTMLInputElement).value)"

@@ -2,16 +2,20 @@
 import { useMaybeDanger } from '@/composables/useMaybeDanger'
 import InputErrors from './InputErrors.vue'
 
-interface Props {
-  label: string
-  options: Map<string, boolean>
-  enabled: boolean
-  errors: string[]
-}
+const props = withDefaults(
+  defineProps<{
+    label: string
+    options: Map<string, boolean>
+    enabled?: boolean
+    errors?: string[]
+  }>(),
+  {
+    enabled: true,
+    errors: () => [],
+  },
+)
 
-const { enabled = true, errors = [] } = defineProps<Props>()
-
-const maybeDanger = useMaybeDanger(errors)
+const maybeDanger = useMaybeDanger(props.errors)
 </script>
 
 <template>
