@@ -25,6 +25,11 @@ registerCalculator('landing', {
   inputIds: new Set(['load', 'landing-flaps', 'gust-increase']),
   enabled: false,
 })
+
+registerCalculator('general', {
+  inputIds: new Set(['load']),
+  enabled: true,
+})
 </script>
 
 <template>
