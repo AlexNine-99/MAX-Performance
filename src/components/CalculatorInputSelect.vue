@@ -6,6 +6,7 @@ const props = defineProps<{
   label: string
   options: string[]
   inputId: string
+  defaultOption?: string
 }>()
 
 const enabled = useCalculatorEnabled(props.inputId)
@@ -16,5 +17,6 @@ const enabled = useCalculatorEnabled(props.inputId)
     :label="label"
     :options="new Map(options.map((option) => [option, true]))"
     :enabled="enabled"
+    :default-option="defaultOption"
   />
 </template>

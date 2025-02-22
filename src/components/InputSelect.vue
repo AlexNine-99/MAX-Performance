@@ -6,10 +6,12 @@ const props = withDefaults(
   defineProps<{
     label: string
     options: Map<string, boolean>
+    defaultOption?: string
     enabled?: boolean
     errors?: string[]
   }>(),
   {
+    defaultOption: undefined,
     enabled: true,
     errors: () => [],
   },
@@ -28,6 +30,7 @@ const maybeDanger = useMaybeDanger(props.errors)
             v-for="[option, optionEnabled] of options.entries()"
             :key="option"
             :disabled="!optionEnabled"
+            :selected="option === defaultOption"
           >
             {{ option }}
           </option>
