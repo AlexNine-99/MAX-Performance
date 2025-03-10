@@ -1,0 +1,44 @@
+{
+  "minSpeeds": [
+    {
+      "selection": "UP",
+      "reference": "VRef40",
+      "additive": 70
+    },
+    {
+      "selection": "1",
+      "reference": "VRef40",
+      "additive": 50
+    },
+    {
+      "selection": "2",
+      "reference": "VRef40",
+      "additive": 40
+    },
+    {
+      "selection": "5",
+      "reference": "VRef40",
+      "additive": 30
+    },
+    {
+      "selection": "10",
+      "reference": "VRef40",
+      "additive": 20
+    },
+    {
+      "selection": "25",
+      "reference": "VRef40",
+      "additive": 10
+    },
+    {
+      "selection": "30",
+      "reference": "VRef30",
+      "additive": 0
+    },
+    {
+      "selection": "40",
+      "reference": "VRef40",
+      "additive": 0
+    }
+  ]
+}

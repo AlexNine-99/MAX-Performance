@@ -1,0 +1,32 @@
+{
+  "max-loads": {
+    "east": [
+      {
+        "load": 100,
+        "level": 290
+      },
+      {
+        "load": 90,
+        "level": 310
+      },
+      {
+        "load": 60,
+        "level": 370
+      }
+    ]
+  },
+  "west": [
+    {
+      "load": 100,
+      "level": 300
+    },
+    {
+      "load": 81,
+      "level": 320
+    },
+    {
+      "load": 70,
+      "level": 360
+    }
+  ]
+}
